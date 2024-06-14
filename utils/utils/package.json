@@ -1,5 +1,5 @@
 {
-  "name": "@cli-test/core",
+  "name": "@fe-cli/utils",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "cli-test": "link:/Users/lixing/Documents/open_source/cli-test"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,0 +1,33 @@
+{
+  "name": "@cli-test/cli",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "cli-test": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cli-test/cli": "1.0.0",
+    "@cli-test/get-npm-info": "workspace:^1.0.0",
+    "@cli-test/init": "workspace:^1.0.0",
+    "@cli-test/log": "workspace:^1.0.0",
+    "@fe-cli/utils": "workspace:^1.0.0",
+    "colors": "^1.4.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "import-local": "^3.1.0",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.8",
+    "path-exists": "^3.0.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.6.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

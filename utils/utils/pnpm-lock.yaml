@@ -1,0 +1,7 @@
+lockfileVersion: 5.4
+
+specifiers:
+  cli-test: link:/Users/lixing/Documents/open_source/cli-test
+
+dependencies:
+  cli-test: link:../..

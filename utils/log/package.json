@@ -1,5 +1,5 @@
 {
-  "name": "@fe-cli/utils",
+  "name": "@cli-test/log",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "npmlog": "^7.0.1"
+  }
 }
