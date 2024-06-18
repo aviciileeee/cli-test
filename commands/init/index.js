@@ -1,5 +1,5 @@
 function init(projectName) {
-  console.log(projectName, this.opts());
+  console.log("in init exec", projectName, this.opts().force);
 }
 
 module.exports = init;

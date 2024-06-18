@@ -13,8 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@cli-test/cli": "1.0.0",
+    "@cli-test/exec": "workspace:^1.0.0",
     "@cli-test/get-npm-info": "workspace:^1.0.0",
-    "@cli-test/init": "workspace:^1.0.0",
     "@cli-test/log": "workspace:^1.0.0",
     "@fe-cli/utils": "workspace:^1.0.0",
     "colors": "^1.4.0",

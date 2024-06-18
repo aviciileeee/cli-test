@@ -17,3 +17,5 @@
 - minimist 参数解析
 - url-join
 - commander
+- pkg-dir
+- npminstall

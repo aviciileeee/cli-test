@@ -1,5 +1,11 @@
 # cli-test
 
+## 5.0.0
+
+### Major Changes
+
+- 处理命令执行逻辑
+
 ## 4.0.0
 
 ### Major Changes

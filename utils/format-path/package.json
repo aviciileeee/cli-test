@@ -1,5 +1,5 @@
 {
-  "name": "@cli-test/utils",
+  "name": "@cli-test/format-path",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,9 +9,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cli-test": "link:/Users/lixing/Documents/open_source/cli-test"
-  },
   "publishConfig": {
     "access": "public"
   }

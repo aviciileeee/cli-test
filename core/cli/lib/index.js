@@ -2,7 +2,8 @@ const os = require("os");
 const path = require("path");
 const pkg = require("../package.json");
 const logger = require("@cli-test/log");
-const initCommand = require("@cli-test/init");
+// const initCommand = require("@cli-test/init");
+const exec = require("@cli-test/exec");
 const { getNpmSemverVersion } = require("@cli-test/get-npm-info");
 const semver = require("semver");
 const colors = require("colors/safe");
@@ -13,17 +14,21 @@ const { LOWEST_NODE_VERSION, DEFAULT_CLI_HOME } = require("./const");
 const program = new commander.Command();
 async function cli() {
   try {
-    checkPkgVersion();
-    checkNodeVersion();
-    checkRoot();
-    checkUserHome();
-    checkEnv();
-    await checkGlobalUpdate();
+    await prepare();
     registerCommand();
-    logger.verbose("hello");
   } catch (error) {
+    console.log(error);
     logger.error(error.message);
   }
+}
+
+async function prepare() {
+  checkPkgVersion();
+  checkNodeVersion();
+  checkRoot();
+  checkUserHome();
+  checkEnv();
+  await checkGlobalUpdate();
 }
 
 function registerCommand() {
@@ -31,12 +36,13 @@ function registerCommand() {
     .name(Object.keys(pkg.bin)[0])
     .usage("<command> [options]")
     .version(pkg.version)
-    .option("-d, --debug", "是否开启调试模式", false);
+    .option("-d, --debug", "是否开启调试模式", false)
+    .option("-tp, --targetPath <targetPath>", "是否指定本地调试文件路径", "");
 
   program
     .command("init [projectName]")
-    .option("-f, --force", "是否强制初始化项目")
-    .action(initCommand);
+    .option("-f, --force", "是否强制初始化项目", false)
+    .action(exec);
 
   program.on("option:debug", function () {
     if (this.opts().debug) {
@@ -53,6 +59,10 @@ function registerCommand() {
     if (availableCommands.length > 0) {
       logger.warn(colors.red(`可用命令为: ${availableCommands.join(",")}`));
     }
+  });
+
+  program.on("option:targetPath", function (val) {
+    process.env.CLI_TARGET_PATH = val;
   });
 
   if (process.argv.length < 3) {

@@ -41,7 +41,7 @@ async function getNpmSemverVersion(npmName, registry, baseVersion) {
   }
 }
 
-function getDefaultRegistry(isOrigin = true) {
+function getDefaultRegistry(isOrigin = false) {
   return isOrigin ? "https://registry.npmjs.org" : "http://localhost:4873/";
 }
 
@@ -49,4 +49,5 @@ module.exports = {
   getNpmInfo,
   getNpmVersions,
   getNpmSemverVersion,
+  getDefaultRegistry,
 };

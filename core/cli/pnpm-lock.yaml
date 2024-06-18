@@ -5,8 +5,8 @@ importers:
   .:
     specifiers:
       '@cli-test/cli': 1.0.0
+      '@cli-test/exec': workspace:^1.0.0
       '@cli-test/get-npm-info': workspace:^1.0.0
-      '@cli-test/init': workspace:^1.0.0
       '@cli-test/log': workspace:^1.0.0
       '@fe-cli/utils': workspace:^1.0.0
       colors: ^1.4.0
@@ -20,8 +20,8 @@ importers:
       semver: ^7.6.2
     dependencies:
       '@cli-test/cli': 'link:'
+      '@cli-test/exec': link:../exec
       '@cli-test/get-npm-info': link:../../utils/get-npm-info
-      '@cli-test/init': link:../../commands/init
       '@cli-test/log': link:../../utils/log
       '@fe-cli/utils': link:../../utils/utils
       colors: 1.4.0
@@ -37,10 +37,22 @@ importers:
   ../..:
     specifiers: {}
 
+  ../../commands/init:
+    specifiers: {}
+
+  ../../models/package:
+    specifiers: {}
+
+  ../../utils/get-npm-info:
+    specifiers: {}
+
   ../../utils/log:
     specifiers: {}
 
   ../../utils/utils:
+    specifiers: {}
+
+  ../exec:
     specifiers: {}
 
 packages:

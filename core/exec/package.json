@@ -1,5 +1,5 @@
 {
-  "name": "@cli-test/utils",
+  "name": "@cli-test/exec",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cli-test": "link:/Users/lixing/Documents/open_source/cli-test"
+    "@cli-test/log": "workspace:^1.0.0",
+    "@cli-test/package": "workspace:^1.0.0"
   },
   "publishConfig": {
     "access": "public"

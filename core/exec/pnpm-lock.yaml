@@ -1,0 +1,9 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@cli-test/log': workspace:^1.0.0
+  '@cli-test/package': workspace:^1.0.0
+
+dependencies:
+  '@cli-test/log': link:../../utils/log
+  '@cli-test/package': link:../../models/package
