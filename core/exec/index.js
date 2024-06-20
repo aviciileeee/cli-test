@@ -1,7 +1,7 @@
 const path = require("path");
-const childProcess = require("child_process");
 const Package = require("@cli-test/package");
 const logger = require("@cli-test/log");
+const { execCmd } = require("@cli-test/utils");
 
 const SETTINGS = {
   init: "@cli-test/init",
@@ -66,7 +66,7 @@ async function exec() {
       });
       args[args.length - 1] = o;
       const code = `require('${rootFile}').call(null, ${JSON.stringify(args)})`;
-      const child = spawn("node", ["-e", code], {
+      const child = execCmd("node", ["-e", code], {
         cwd: process.cwd(),
         stdio: "inherit",
       });
@@ -75,7 +75,7 @@ async function exec() {
         process.exit(1);
       });
       child.on("exit", (e) => {
-        logger.info("命令执行成功");
+        logger.info("命令执行完成");
         process.exit(e);
       });
     } catch (error) {
@@ -87,11 +87,11 @@ async function exec() {
   }
 }
 
-function spawn(command, args, options) {
-  const win32 = process.platform === "win32";
-  const cmd = win32 ? "cmd" : command;
-  const cmdArgs = win32 ? ["/c"].concat(command, args) : args;
-  return childProcess.spawn(cmd, cmdArgs, options || {});
-}
+// function spawn(command, args, options) {
+//   const win32 = process.platform === "win32";
+//   const cmd = win32 ? "cmd" : command;
+//   const cmdArgs = win32 ? ["/c"].concat(command, args) : args;
+//   return childProcess.spawn(cmd, cmdArgs, options || {});
+// }
 
 module.exports = exec;

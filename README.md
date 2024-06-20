@@ -21,10 +21,12 @@
 - npminstall
 - path-exists
 - fs-extra
-
+- cli-spinner
 - inquirer
 - readline
 - events
 - mute-stream
 - rxjs
 - anti-escapes
+- ejs
+- glob

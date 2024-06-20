@@ -78,9 +78,9 @@ class Package {
         ],
       });
       this.packageVersion = latestVersion;
-    } else {
-      logger.verbose("当前执行命令的包已是最新版本");
+      return true;
     }
+    return false;
   }
 
   getCachePackageVersion() {

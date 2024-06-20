@@ -1,7 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
+  cli-spinner: ^0.2.10
   cli-test: link:/Users/lixing/Documents/open_source/cli-test
 
 dependencies:
+  cli-spinner: 0.2.10
   cli-test: link:../..
+
+packages:
+
+  /cli-spinner/0.2.10:
+    resolution: {integrity: sha512-U0sSQ+JJvSLi1pAYuJykwiA8Dsr15uHEy85iCJ6A+0DjVxivr3d+N2Wjvodeg89uP5K6TswFkKBfAD7B3YSn/Q==}
+    engines: {node: '>=0.10'}
+    dev: false
