@@ -11,6 +11,7 @@ const semver = require("semver");
 const getProjectTemplate = require("./api/getProjectTemplate");
 const { glob } = require("glob");
 const ejs = require("ejs");
+const { inherits } = require("util");
 const TYPE_PROJECT = "project";
 const TYPE_COMPONENT = "component";
 const TEMPLATE_TYPE_NORMAL = "normal";
@@ -147,7 +148,28 @@ class InitCommand extends Command {
     }
   }
 
-  async installCustomTemplate() {}
+  async installCustomTemplate() {
+    if (await this.templateNpm.exists()) {
+      const rootFile = this.templateNpm.getRootFilePath();
+      console.log(rootFile, "!!");
+      if (fs.existsSync(rootFile)) {
+        logger.notice("开始执行自定义模版");
+        const options = {
+          ...this.templateInfo,
+          cwd: process.cwd(),
+        };
+        const code = `require('${rootFile}')(${JSON.stringify(options)})`;
+        logger.verbose("custom code:", code);
+        await execCmdAsync("node", ["-e", code], {
+          cwd: process.cwd(),
+          stdio: "inherit",
+        });
+        logger.success("自定义模版安装成功");
+      } else {
+        throw new Error("自定义模版入口文件不存在");
+      }
+    }
+  }
 
   async ejsRender(ignore) {
     const dir = process.cwd();
