@@ -12,8 +12,12 @@
   "dependencies": {
     "@cli-test/format-path": "workspace:^1.0.0",
     "@cli-test/get-npm-info": "workspace:^1.0.0",
+    "@cli-test/log": "workspace:^1.0.0",
     "@cli-test/utils": "workspace:^1.0.0",
+    "fs-extra": "^9.1.0",
     "npminstall": "^7.12.0",
-    "pkg-dir": "^4.2.0"
+    "path-exists": "^3.0.0",
+    "pkg-dir": "^4.2.0",
+    "semver": "^7.6.2"
   }
 }

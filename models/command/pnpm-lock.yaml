@@ -1,0 +1,24 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@cli-test/log': workspace:^1.0.0
+  colors: ^1.4.0
+  semver: ^7.6.2
+
+dependencies:
+  '@cli-test/log': link:../../utils/log
+  colors: 1.4.0
+  semver: 7.6.2
+
+packages:
+
+  /colors/1.4.0:
+    resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==}
+    engines: {node: '>=0.1.90'}
+    dev: false
+
+  /semver/7.6.2:
+    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: false

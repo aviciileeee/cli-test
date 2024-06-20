@@ -1,59 +1,36 @@
 lockfileVersion: 5.4
 
-importers:
+specifiers:
+  '@cli-test/cli': 1.0.0
+  '@cli-test/exec': workspace:^1.0.0
+  '@cli-test/get-npm-info': workspace:^1.0.0
+  '@cli-test/log': workspace:^1.0.0
+  '@cli-test/utils': workspace:^1.0.0
+  colors: ^1.4.0
+  commander: ^12.1.0
+  dotenv: ^16.4.5
+  import-local: ^3.1.0
+  lodash: ^4.17.21
+  minimist: ^1.2.8
+  path-exists: ^3.0.0
+  root-check: ^1.0.0
+  semver: ^7.6.2
 
-  .:
-    specifiers:
-      '@cli-test/cli': 1.0.0
-      '@cli-test/exec': workspace:^1.0.0
-      '@cli-test/get-npm-info': workspace:^1.0.0
-      '@cli-test/log': workspace:^1.0.0
-      '@fe-cli/utils': workspace:^1.0.0
-      colors: ^1.4.0
-      commander: ^12.1.0
-      dotenv: ^16.4.5
-      import-local: ^3.1.0
-      lodash: ^4.17.21
-      minimist: ^1.2.8
-      path-exists: ^3.0.0
-      root-check: ^1.0.0
-      semver: ^7.6.2
-    dependencies:
-      '@cli-test/cli': 'link:'
-      '@cli-test/exec': link:../exec
-      '@cli-test/get-npm-info': link:../../utils/get-npm-info
-      '@cli-test/log': link:../../utils/log
-      '@fe-cli/utils': link:../../utils/utils
-      colors: 1.4.0
-      commander: 12.1.0
-      dotenv: 16.4.5
-      import-local: 3.1.0
-      lodash: r2.cnpmjs.org/lodash/4.17.21
-      minimist: 1.2.8
-      path-exists: 3.0.0
-      root-check: 1.0.0
-      semver: 7.6.2
-
-  ../..:
-    specifiers: {}
-
-  ../../commands/init:
-    specifiers: {}
-
-  ../../models/package:
-    specifiers: {}
-
-  ../../utils/get-npm-info:
-    specifiers: {}
-
-  ../../utils/log:
-    specifiers: {}
-
-  ../../utils/utils:
-    specifiers: {}
-
-  ../exec:
-    specifiers: {}
+dependencies:
+  '@cli-test/cli': 'link:'
+  '@cli-test/exec': link:../exec
+  '@cli-test/get-npm-info': link:../../utils/get-npm-info
+  '@cli-test/log': link:../../utils/log
+  '@cli-test/utils': link:../../utils/utils
+  colors: 1.4.0
+  commander: 12.1.0
+  dotenv: 16.4.5
+  import-local: 3.1.0
+  lodash: r2.cnpmjs.org/lodash/4.17.21
+  minimist: 1.2.8
+  path-exists: 3.0.0
+  root-check: 1.0.0
+  semver: 7.6.2
 
 packages:
 

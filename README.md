@@ -19,3 +19,12 @@
 - commander
 - pkg-dir
 - npminstall
+- path-exists
+- fs-extra
+
+- inquirer
+- readline
+- events
+- mute-stream
+- rxjs
+- anti-escapes

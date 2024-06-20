@@ -16,7 +16,7 @@
     "@cli-test/exec": "workspace:^1.0.0",
     "@cli-test/get-npm-info": "workspace:^1.0.0",
     "@cli-test/log": "workspace:^1.0.0",
-    "@fe-cli/utils": "workspace:^1.0.0",
+    "@cli-test/utils": "workspace:^1.0.0",
     "colors": "^1.4.0",
     "commander": "^12.1.0",
     "dotenv": "^16.4.5",

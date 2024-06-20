@@ -9,7 +9,7 @@ const semver = require("semver");
 const colors = require("colors/safe");
 const pathExists = require("path-exists").sync;
 const commander = require("commander");
-const { LOWEST_NODE_VERSION, DEFAULT_CLI_HOME } = require("./const");
+const { DEFAULT_CLI_HOME } = require("./const");
 
 const program = new commander.Command();
 async function cli() {
@@ -17,14 +17,15 @@ async function cli() {
     await prepare();
     registerCommand();
   } catch (error) {
-    console.log(error);
+    if (process.env.LOG_LEVEL === "verbose") {
+      console.log(error);
+    }
     logger.error(error.message);
   }
 }
 
 async function prepare() {
   checkPkgVersion();
-  checkNodeVersion();
   checkRoot();
   checkUserHome();
   checkEnv();
@@ -141,19 +142,6 @@ function checkRoot() {
  */
 function checkPkgVersion() {
   logger.info("cli-test", pkg.version);
-}
-
-/**
- * 检查Node版本
- */
-function checkNodeVersion() {
-  const currentVersion = process.version;
-  const lowestVersion = LOWEST_NODE_VERSION;
-  if (!semver.gte(currentVersion, lowestVersion)) {
-    throw new Error(
-      colors.red(`cli 需要安装${LOWEST_NODE_VERSION}以上版本的Node.js`)
-    );
-  }
 }
 
 module.exports = cli;
